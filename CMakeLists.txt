@@ -4,7 +4,7 @@ project(
   VERSION 0.1
   DESCRIPTION "An Experimental Study of Aggregate Signatures using the MCL pairings library"
   LANGUAGES CXX)
-set (CMAKE_CXX_STANDARD 20)
+set (CMAKE_CXX_STANDARD 17)
 
 # Help cmake find our custom cmake modules
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
