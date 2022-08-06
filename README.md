@@ -8,3 +8,10 @@ An implementations of different aggregate signature schemes using the [MCL pairi
 cmake -S . -B build
 cmake --build build
 ```
+
+## Run tests
+
+```
+cd /build/tests
+./main-t
+```
