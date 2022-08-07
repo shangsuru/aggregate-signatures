@@ -9,6 +9,16 @@ set (CMAKE_CXX_STANDARD 17)
 # Help cmake find our custom cmake modules
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 
+include(FetchContent)
+
+# MCL Pairing Library
+FetchContent_Declare(
+  MCL
+  GIT_REPOSITORY "https://github.com/herumi/mcl"
+  GIT_TAG "v1.68"
+)
+FetchContent_MakeAvailable(MCL)
+
 add_subdirectory(src)
 
 # Testing

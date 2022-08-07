@@ -3,7 +3,7 @@ WarningsAsErrors: "-*,readability-magic-numbers"
 HeaderFilterRegex: ""
 AnalyzeTemporaryDtors: false
 FormatStyle: none
-User: melhindi
+User: henry
 CheckOptions:
     - key: bugprone-argument-comment.CommentBoolLiterals
       value: "0"
