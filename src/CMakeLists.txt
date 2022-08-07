@@ -1,4 +1,2 @@
 add_executable(hello_world main.cpp)
-target_link_libraries(hello_world PRIVATE mcl mclbn256)
-set_target_properties(mcl PROPERTIES INTERFACE_SYSTEM_INCLUDE_DIRECTORIES $<TARGET_PROPERTY:mcl,INTERFACE_INCLUDE_DIRECTORIES>)
-set_target_properties(mclbn256 PROPERTIES INTERFACE_SYSTEM_INCLUDE_DIRECTORIES $<TARGET_PROPERTY:mclbn256,INTERFACE_INCLUDE_DIRECTORIES>)
+target_link_libraries(hello_world PRIVATE mcl)
