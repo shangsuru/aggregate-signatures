@@ -233,6 +233,10 @@ CheckOptions:
       value: "800"
     - key: readability-function-size.VariableThreshold
       value: "4294967295"
+    - key: readability-identifier-length.MinimumVariableNameLength
+      value: "1" 
+    - key: readability-identifier-length.MinimumParameterNameLength
+      value: "1"
     - key: readability-identifier-naming.AggressiveDependentMemberLookup
       value: "false"
     - key: readability-identifier-naming.IgnoreFailedSplit

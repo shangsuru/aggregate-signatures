@@ -1,2 +1,3 @@
-add_executable(main-t main-t.cpp)
-target_include_directories(main-t SYSTEM PUBLIC ${DOCTEST_INCLUDE_DIR})
+add_executable(bls-t bls-t.cpp ${CMAKE_SOURCE_DIR}/src/bls.cpp)
+target_link_libraries(bls-t mcl)
+target_include_directories(bls-t SYSTEM PUBLIC ${DOCTEST_INCLUDE_DIR})

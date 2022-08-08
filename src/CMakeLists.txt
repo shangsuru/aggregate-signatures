@@ -1,2 +1,2 @@
-add_executable(hello_world main.cpp)
-target_link_libraries(hello_world PRIVATE mcl)
+add_executable(benchmark benchmark.cpp bls.cpp)
+target_link_libraries(benchmark PRIVATE mcl)

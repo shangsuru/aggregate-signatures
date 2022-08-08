@@ -21,6 +21,7 @@ FetchContent_MakeAvailable(MCL)
 # Exclude from clang-tidy analysis
 set_target_properties(mcl PROPERTIES INTERFACE_SYSTEM_INCLUDE_DIRECTORIES $<TARGET_PROPERTY:mcl,INTERFACE_INCLUDE_DIRECTORIES>)
 
+include_directories(include)
 add_subdirectory(src)
 
 # Testing
