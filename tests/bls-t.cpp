@@ -3,27 +3,27 @@
 #include "doctest.h"
 
 using namespace mcl::bn256;
+using std::string;
+
+auto signAndVerify(const string& msgToSign, const string& msgToVerify) -> bool {
+  BLS bls = BLS();
+  G1 sig;
+  G2 pk;
+  Fr sk;
+  bls.generateKeys(pk, sk);
+
+  bls.sign(sig, msgToSign, sk);
+  return bls.verify(sig, msgToVerify, pk);
+}
 
 TEST_CASE("Accepts signature") {
-  BLS bls = BLS();
-  std::string m = "msg";
-  G1 sig;
-  bls.sign(sig, m);
-  CHECK(bls.verify(sig, m));
+  CHECK(signAndVerify("msg", "msg"));
 }
 
 TEST_CASE("Accepts signature on empty message") {
-  BLS bls = BLS();
-  std::string m;
-  G1 sig;
-  bls.sign(sig, m);
-  CHECK(bls.verify(sig, m));
+  CHECK(signAndVerify("", ""));
 }
 
 TEST_CASE("Neglects signature on different message") {
-  BLS bls = BLS();
-  std::string m = "msg";
-  G1 sig;
-  bls.sign(sig, m);
-  CHECK(!bls.verify(sig, "other"));
+  CHECK(!signAndVerify("msg", "other"));
 }

@@ -11,12 +11,11 @@
 class BLS {
  public:
   BLS();
-  void sign(mcl::bn256::G1& sig, const std::string& m);
-  auto verify(const mcl::bn256::G1& sig, const std::string& m) -> bool;
+  void generateKeys(mcl::bn256::G2& pk, mcl::bn256::Fr& sk);
+  static void sign(mcl::bn256::G1& sig, const std::string& m, const mcl::bn256::Fr& sk);
+  auto verify(const mcl::bn256::G1& sig, const std::string& m, const mcl::bn256::G2& pk) -> bool;
 
- private:
+ protected:
   static void hash(mcl::bn256::G1& p, const std::string& m);
   mcl::bn256::G2 g_;
-  mcl::bn256::Fr sk_;
-  mcl::bn256::G2 pk_;
 };
