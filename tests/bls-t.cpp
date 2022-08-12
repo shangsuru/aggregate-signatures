@@ -12,7 +12,7 @@ auto signAndVerify(const string& msgToSign, const string& msgToVerify) -> bool {
   Fr sk;
   bls.generateKeys(pk, sk);
 
-  bls.sign(sig, msgToSign, sk);
+  BLS::sign(sig, msgToSign, sk);
   return bls.verify(sig, msgToVerify, pk);
 }
 
@@ -24,6 +24,6 @@ TEST_CASE("Accepts signature on empty message") {
   CHECK(signAndVerify("", ""));
 }
 
-TEST_CASE("Neglects signature on different message") {
+TEST_CASE("Rejects signature on different message") {
   CHECK(!signAndVerify("msg", "other"));
 }
