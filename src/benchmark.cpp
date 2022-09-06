@@ -73,7 +73,7 @@ auto runBGLS(const vector<string>& msgs) -> ExperimentData {
   auto time_to_verify = duration_cast<milliseconds>(stop -start);
 
   return ExperimentData{
-      SignatureScheme::kBLS, msgs.size(), sizeof(agg) / 1000.0 , sizeof(pk) / 1000.0 * msgs.size(), sizeof(sk) / 1000.0 * msgs.size(),
+      SignatureScheme::kBGLS, msgs.size(), sizeof(agg) / 1000.0 , sizeof(pk) / 1000.0 * msgs.size(), sizeof(sk) / 1000.0 * msgs.size(),
       time_to_sign, time_to_verify,
   };
 }
